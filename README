@@ -1,0 +1,14 @@
+Aftec 2016/2017
+Concepteur Développeur Informatique 2ème année
+ZAIDI Amine Hakim : hakim.zaidi@aftec.org
+
+Ce projet repond au controle continu du module python
+
+le projet choisi est le sujet 6 intitulé : Modifier du html avec python
+
+l'objectif est de produire un programme qui puisse 
+  - Lister les fichiers html d'un repertoire
+  - Choisir un mot à entourer avec la balise suivante : <span class="important">MOT</span>
+  - Afficher les fichiers modifiés
+  - Sauvegarder l'ancien fichier initial en ajoutant l'extension (.back) et un nouveau fichier incluant les modification 
+    avec le nom de fichier initial.
