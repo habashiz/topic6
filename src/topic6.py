@@ -5,8 +5,9 @@ import os
 from pathModule import *
 
 listFiles = list()
-directory = input("Veuillez indiquer un reperoitre: ")
 
+directory = input("Veuillez indiquer un reperoitre: ")
 listFiles = getFilesDirectory(directory)
 print(listFiles)
 
+mot = input("Veuillez indiquer le mot que vous vouler classer autant qu'important: ")
