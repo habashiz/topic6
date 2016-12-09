@@ -12,3 +12,9 @@ l'objectif est de produire un programme qui puisse
   - Afficher les fichiers modifiés
   - Sauvegarder l'ancien fichier initial en ajoutant l'extension (.back) et un nouveau fichier incluant les modification 
     avec le nom de fichier initial.
+
+Ce programme utilise les librairie de reference de base et essentiellement le module "os".
+Aprés des soucis de documentation pour l'utilisation de modules tel que lxml et beautifullSoup,
+ce programme ne se base pas sur un parser et traite les fichier html tel des chaine de caractere
+ce qui implique que le programme ne peut prendre en parametre des mots ou des composés de
+la syntaxe des balises html.
