@@ -3,6 +3,7 @@ import os, sys, stat
 def makeImportantToWord(chemin, maliste, word):
 	#Mise en place dans le repertoire indiquer par l'utilisateur
 	os.chdir(chemin)
+	listFilesModified = list()
 	i = 0
 	while(i < len(maliste)):
 		contenuFinal = ""
@@ -14,9 +15,10 @@ def makeImportantToWord(chemin, maliste, word):
 		makeimportant = "<span class =\"important\">" + word + "</span>"
 		#Instancier une chaine de caractère avec le contenu de notre fichier initial 
 		contenuFichier = fichier.read()
-		print(contenuFichier)
+		#print(contenuFichier)
 		#Tester si un le mot fait partie du fichier
 		if word in contenuFichier:
+			listFilesModified.append(nomFichier)
 			contenuFinal = contenuFichier.replace(word, makeimportant)
 			#print(contenuFinal)
 			fichier.close()
@@ -29,3 +31,4 @@ def makeImportantToWord(chemin, maliste, word):
 			fichierFinal.write(contenuFinal)
 			fichierFinal.close()
 		i+=1
+	return listFilesModified	
