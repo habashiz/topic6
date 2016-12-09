@@ -1,25 +1,31 @@
-import os
+import os, sys, stat
 
 def makeImportantToWord(chemin, maliste, word):
 	#Mise en place dans le repertoire indiquer par l'utilisateur
 	os.chdir(chemin)
 	i = 0
-	while(i <= len(maliste)):
+	while(i < len(maliste)):
+		contenuFinal = ""
 		#indique le nom de fichier à traiter
 		nomFichier = maliste[i]
-		#Copie du contenu du fichier dans une chaine de caractère qui sera traiter par la suite
+		#Ouvrir les fichier a traiter un à un
 		fichier = open(nomFichier, "r")
-		contenu = fichier.read()
-		fichier.close()
+		#Instancier uen chaine de caracter avec les parametre d'une balise span en class important tel demander dans le projet
+		makeimportant = "<span class =\"important\">" + word + "</span>"
+		#Instancier une chaine de caractère avec le contenu de notre fichier initial 
+		contenuFichier = fichier.read()
+		print(contenuFichier)
+		#Tester si un le mot fait partie du fichier
+		if word in contenuFichier:
+			contenuFinal = contenuFichier.replace(word, makeimportant)
+			#print(contenuFinal)
+			fichier.close()
 		#renomage du fichier initial avec l'ajout de l'extension (.old)
-		newNameFile = nomFichier + ".old"
-		rename(nomFichier, newNameFile)
-		#Si notre string representant le fichier initial contient le mot qu'on voudrais intéragir avec
-		if contenu.find(word):
-			#instanciation d'une chaine de caractere avec une balise entourant le mot escompé
-			makeimportant = "<span class =\"important\">" + word + "</span>"
-			#Parcour de la chaine de caractere et ecriture de la balise "important"
-			contenu.replace(word, makeimportant)
+			newNameFile = nomFichier + ".old"
+			os.chmod(nomFichier, stat.S_IWRITE)
+			os.rename(nomFichier, newNameFile)
 			#Création d'un nouveau fichier et ecriture de notre nouveau contenu traité
 			fichierFinal = open(nomFichier, "w")
-			fichierFinal.write(contenu)
+			fichierFinal.write(contenuFinal)
+			fichierFinal.close()
+		i+=1
