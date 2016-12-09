@@ -8,9 +8,9 @@ import os, sys, stat
 from pathModule import *
 from wordModule import *
 
-#bool indiquant l'execution du programme
 print("Ce programme permet d'entourer un mot avec une balise statique \n<span class=important/> sur un fichier html depuis un repertoire donné. \nAttention, ne jamais passer en parametre un mot correspondant à la syntaxe \ndes balises html afin d'eviter des erreurs dans votre code ")
 print("********************************************************************************")
+#bool indiquant l'execution ou non du programme
 execution = True
 while(execution):
 	#Instanciation de deux listes corespondant respectivement a la liste des fichier html dans le repertoire et de la liste des fichiers modifiés depuis notre méthode correspondante
