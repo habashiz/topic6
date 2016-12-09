@@ -1,3 +1,4 @@
+# Aftec
 # ZAIDI Hakim
 # CDI 2ème année
 # Topic 6 : Modifier du HTML avec Python
@@ -28,11 +29,11 @@ while(execution):
 		if len(listFilesModified) != 0:
 			print("Les fichiers modifiés sont : ")
 			print(listFilesModified)
-			print("Une copie des fichiers initiaux est sauvegarder avec le nom initial du fichier avec l'extention .old dans le mème repertoire")
+			print("Une copie des fichiers initiaux est sauvegardée avec le nom initial du fichier et l'extention .old dans le même repertoire")
 		else :
-			print("Aucun fichier ne contient le mot passé en parametre, par consequent aucun fichier n'a etait modifié")
+			print("Aucun fichier ne contient le mot passé en parametre, par conséquent aucun fichier n'a était modifié")
 
-		exe = input("Si vous voulez reexecuter le programme taper o, si non taper n : ")
+		exe = input("Si vous voulez reéxecuter le programme taper o, si non taper n : ")
 		if exe == 'n':
 			execution = False
 	else : 

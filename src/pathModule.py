@@ -8,6 +8,7 @@ def getFilesDirectory(directory):
     		if element.endswith('html'):
     			maliste.append(element)
     except FileNotFoundError:
+    	#Récuperer le repertoire courant
     	repCour = os.getcwd()
     	print("le repertoire indiqué n'existe pas, le dossier courant suivant sera utilisé:  "+repCour)
     	getFilesDirectory(repCour)
