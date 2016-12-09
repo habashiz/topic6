@@ -31,6 +31,6 @@ while(execution):
 	else :
 		print("Aucun fichier ne contient le mot passé en parametre, par consequent aucun fichier n'a etait modifié")
 
-	exe = input("Si vous voulez reexecuter le programme taper O, si non taper N : ")
-	if exe == 'N':
+	exe = input("Si vous voulez reexecuter le programme taper o, si non taper n : ")
+	if exe == 'n':
 		execution = False	
