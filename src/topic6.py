@@ -8,26 +8,27 @@ from pathModule import *
 from wordModule import *
 
 #bool indiquant l'execution du programme
+print("Ce programme permet d'entourer un mot avec une balise statique \n<span class=important/> sur un fichier html depuis un repertoire donné. \nAttention, ne jamais passer en parametre un mot correspondant à la syntaxe \ndes balises html afin d'eviter des erreurs dans votre code ")
+print("********************************************************************************")
 execution = True
-print("Ce programme permet d'entourer un mot avec une balise statique \n <span class=important/> sur un fichier html depuis un repertoire donnée")
 while(execution):
 	#Instanciation de deux listes corespondant respectivement a la liste des fichier html dans le repertoire et de la liste des fichiers modifiés depuis notre méthode correspondante
-	listFiles = list()
+	listFilesDirectory = list()
 	listFilesModified = list()
 
 	directory = input("Veuillez indiquer un repertoire: ")
 	#La méthode est importée depuis le module "pathModule" est permet de lister les fichiers html centenus dans le repertoire indiqué 
-	listFiles = getFilesDirectory(directory)
-	print(listFiles)
-	if len(listFiles) != 0:
-		mot = input("Veuillez indiquer le mot que vous voulez entourer de balise span class important: ")
-
+	listFilesDirectory = getFilesDirectory(directory)
+	print("Ce repertoire contient les fichiers html suivants: ")
+	print(listFilesDirectory)
+	if len(listFilesDirectory) != 0:
+		mot = input("Veuillez indiquer le mot que vous voulez entourer avec la balise <span class='important'/>: ")
 		#La méthode est importée depuis le module "wordModule" est permet d'inserer une balise span class important sur du contenu html
-		listFilesModified = makeImportantToWord(directory, listFiles, mot)
+		listFilesModified = makeWordImportant(directory, listFilesDirectory, mot)
 		if len(listFilesModified) != 0:
-			print("Les fichiers contenant le mot et modifiés sont : ")
+			print("Les fichiers modifiés sont : ")
 			print(listFilesModified)
-			print("Une copie des fichiers initiaux est sauvegarder avec le nom initial du fichier avec l'extention .old sur le mème repertoire")
+			print("Une copie des fichiers initiaux est sauvegarder avec le nom initial du fichier avec l'extention .old dans le mème repertoire")
 		else :
 			print("Aucun fichier ne contient le mot passé en parametre, par consequent aucun fichier n'a etait modifié")
 
